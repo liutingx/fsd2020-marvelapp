@@ -1,0 +1,35 @@
+<form method="GET" action="/search">
+    <div class="form-group row">
+        <label for="search">Search for a Marvel character: </label>
+        <input type="text" class="form-control" id="search" name="search" placeholder="Type in a name..." required>
+    </div>
+
+    <button type="submit" class="btn btn-primary row">Search</button>
+</form>
+{{#if hasContent}}
+    <div class="row mt-4">
+        <h3>Your search of <b>{{search}}</b> has returned {{count}} results (20 max)</h3>
+    </div>
+    <table class="row table">
+        <tbody>
+            {{#each names}}
+            <tr>
+                <td>
+                    <img src="{{this.thumbnail}}.jpg" width=80% alt="">
+                </td>
+                <td>
+                    <a href="/search/{{search}}/{{this.charId}}"><h3>{{this.name}}</h3></a>
+                </td>
+            </tr>   
+            {{/each}}   
+        </tbody>
+    </table>
+{{else}}
+    <div class="row">
+        <h3>Your search has returned no results! Do another search!</h3>
+    </div>
+{{/if}}
+
+
+
+

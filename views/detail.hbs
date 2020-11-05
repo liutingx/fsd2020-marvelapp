@@ -1,0 +1,34 @@
+<!--table class="table row table-fixed">
+    <tr>
+        <td><img src="{{names.thumbnail}}.jpg" width=80% min-width=100px alt=""></td>
+
+        <td>
+            <h2>{{names.name}}</h2>
+            <p>Number of comics: {{names.noOfComics}}</p>
+            <p>Url to view comics: <a href="{{names.comicsUrl}}">{{names.comicsUrl}}</a></p>
+        </td>
+    </tr>
+</table-->
+<div class="row mt-4">
+    <div class="col pl-0">
+        <img src="{{names.thumbnail}}.jpg" width=100% style="min-width:150px;" alt="">
+    </div>
+    <div class="col">
+        <h3>{{names.name}}</h3>
+        <br>
+        <p>Number of comics: {{names.noOfComics}}</p>
+        <p>Number of series: {{names.noOfSeries}}</p>
+        <p>Number of stories: {{names.noOfStories}}</p>
+        <p>Number of events: {{names.noOfEvents}}</p>
+    </div>
+</div>
+<div class="row mt-4 d-flex justify-content-between">
+    <form method="GET" action="/search">
+        <input type="hidden" name="search" value="{{ search }}">
+        <button type="submit" class="btn btn-primary">Back to Previous page</button>
+    </form>
+    <form method="GET" action="/">
+        <button type="submit" class="btn btn-primary">Back to Home page</button>
+    </form>
+</div>
+
